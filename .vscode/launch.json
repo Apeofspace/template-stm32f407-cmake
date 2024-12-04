@@ -1,0 +1,31 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "OpenOCD Attach",
+      "cwd": "${workspaceRoot}",
+      "executable": "build/output.elf",
+      "request": "attach",
+      "type": "cortex-debug",
+      "servertype": "openocd",
+      "device": "STM32F401",
+      "configFiles": ["interface/stlink.cfg", "target/stm32f4x.cfg"],
+      "preLaunchTask": "",
+      "showDevDebugOutput": "raw",
+      "svdFile": "${workspaceRoot}/svd/stm32f407.svd"
+    },
+    {
+      "name": "OpenOCD Debug",
+      "cwd": "${workspaceRoot}",
+      "executable": "build/output.elf",
+      "request": "attach",
+      "type": "cortex-debug",
+      "servertype": "openocd",
+      "device": "STM32F401",
+      "configFiles": ["interface/stlink.cfg", "target/stm32f4x.cfg"],
+      "preLaunchTask": "Flash",
+      "showDevDebugOutput": "raw",
+      "svdFile": "${workspaceRoot}/svd/stm32f407.svd"
+    }
+  ]
+}
